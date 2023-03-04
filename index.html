@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/animate.css">
     <title>Sistema de Login Utilizando LocalStorage</title>
 </head>
 <body>
@@ -18,8 +19,8 @@
             </div>
             <div id="menu__header">
                 <ul>
-                    <li><a href="#login">Login</a></li>
-                    <li><a href="#register">Cadastro</a></li>
+                    <li id="login__button"><a href="#login">Login</a></li>
+                    <li id="regiter__button"><a href="#register">Cadastro</a></li>
                 </ul>
             </div>
         </nav>
@@ -32,11 +33,11 @@
             </div>
         </section>
         <section id="login">
+            <span><a href="" id="hide__login" onclick="closeForm();">cancelar</a></span>
             <div id="login__content">
                 <form action="panel.html" type="post" id="form__login" autocomplete="off">
                     <fieldset>
                         <legend>Login</legend>
-                        <div id="login__content">
                             <label id="label__email" class="label__email animate__animated">Informe seu e-mail:</label>
                             <input 
                                 type="email" 
@@ -57,8 +58,7 @@
                                 onfocus="this.value=''; showLabelPass();" 
                                 onfocusOut="hideLabelPass();" 
                             />
-                        </div>
-                        <a href="#" id="submit__login" class="animate__animated">Entrar</a>
+                        <button id="submit__login" class="animate__animated">Entrar</button>
                         <span>Não é registrado? <a href="#" onClick="showRegister();">Crie uma conta!</a></span>
                     </fieldset>
                 </form>
@@ -68,7 +68,7 @@
 
     <footer>
         <div id="copy">
-            &#169; 2023 Desenvolvido por: 
+            &#169; 2023 Sistema de Login | Desenvolvido por: 
             <a href="https://ticoesteves.github.io/portfolio/" 
             target="_blank">Tico Esteves</a><br>
             Todos os direitos reservados.

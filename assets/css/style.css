@@ -8,11 +8,13 @@
 
 :root {
     --maxWidthContent: 1200px;
-    --primaryColor: blueviolet;
-    --secondaryColor: rgb(200, 178, 221);
-    --linkColor: blue;
+    --minWidthContent: 420px;
+    --primaryColor: #6181AE;
+    --secondaryColor: #22252F;
+    --bgColor: #D9ECFF;
     --brightColor: #fff;
     --darkColor: #000;
+    --linkColor: #50FA7B;
 }
 
 ul {
@@ -34,7 +36,11 @@ header {
     position: fixed;
     padding: 1rem;
     color: var(--brightColor);
-    background-color: var(--primaryColor);
+    background-color: var(--secondaryColor);
+    box-shadow: 0px 5px 40px var(--darkColor); 
+    -webkit-box-shadow: 0px 5px 40px var(--darkColor);
+    -moz-box-shadow: 0px 5px 40px var(--darkColor);
+    z-index: 4;
 }
 
 nav {
@@ -54,8 +60,8 @@ nav {
 #menu__header a {
     margin: 1rem;
     padding: 0.7rem 2rem;
-    color: var(--primaryColor);
-    background-color: var(--secondaryColor);
+    color: var(--brightColor);
+    background-color: var(--primaryColor);
     border-radius: 10px;
     text-transform: uppercase;
     font-weight: bold;
@@ -67,7 +73,7 @@ nav {
 }
 
 #description {
-    background-color: var(--secondaryColor);
+    background-color: var(--bgColor);
     padding: 1rem;
 }
 
@@ -84,15 +90,45 @@ nav {
 }
 
 #login {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    color: var(--brightColor);
+    background-color: var(--brightColor);
+    box-shadow: 0px 5px 40px var(--darkColor); 
+    -webkit-box-shadow: 0px 5px 40px var(--darkColor);
+    -moz-box-shadow: 0px 5px 40px var(--darkColor);
+    z-index: 2;
+}
+
+#login__content {
     width: 40%;
     height: 100vh;
+    padding: 8rem 1rem 1rem;
     position: absolute;
     top: 0;
     left: 0;
-    padding: 2rem;
-    background-color: var(--brightColor);
+    color: var(--brightColor);
+    background-color: var(--secondaryColor);
+    box-shadow: 0px 5px 40px var(--darkColor); 
+    -webkit-box-shadow: 0px 5px 40px var(--darkColor);
+    -moz-box-shadow: 0px 5px 40px var(--darkColor);
+    z-index: 3;
 }
-
+/* 
+#login__content, #content__register {
+    max-width: var(--maxWidthContent);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    z-index: 2;
+}
+ */
 footer {
     width: 100%;
     height: 5rem;
@@ -102,15 +138,145 @@ footer {
     position: absolute;
     bottom: 0;
     color: var(--brightColor);
-    background-color: var(--primaryColor);
+    background-color: var(--secondaryColor);
     text-align: center;
     font-size: 0.9rem;
+    box-shadow: 0px 5px 40px var(--darkColor); 
+    -webkit-box-shadow: 0px 5px 40px var(--darkColor);
+    -moz-box-shadow: 0px 5px 40px var(--darkColor);
+    z-index: 4;
 }
 
 #copy a {
-    color: var(--secondaryColor);
+    color: var(--primaryColor);
 }
 
 #copy a:hover {
     color: var(--brightColor);
+}
+
+form {
+    width: 100%;
+    height: 400px;
+}
+
+form fieldset {
+    height: 380px;
+    padding: 30px 15px;
+    font-size: 25px;
+    border: 3px inset var(--primaryColor);
+    border-radius: 10px;
+}
+
+form legend {
+    padding: 0 15px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+form input {
+    width: 100%;
+    margin: 0.5rem 0 1.5rem;
+    padding: 1.5rem 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    z-index: 3;
+}
+
+form input ::placeholder {
+    color: var(--primaryColor);
+}
+
+.label__email, .label__pass {
+    display: none;
+    position: relative;
+    top: 0px;
+    color: var(--brightColor);
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+#email__login {
+    padding: 1rem 1rem 0.5rem;
+    color: var(--primaryColor);
+    background-color: var(--secundaryColor);
+    border-bottom: 1px solid var(--primaryColor);
+}
+
+#email__login::placeholder {
+    color: var(--primaryColor);
+}
+
+#password__login {
+    padding: 1rem 1rem 0.5rem;
+    color: var(--primaryColor);
+    background-color: var(--secundaryColor);
+    border-bottom: 1px solid var(--primaryColor);
+}
+
+#password__login::placeholder {
+    color: var(--primaryColor);
+}
+
+#email__register {
+    padding: 1rem 1rem 0.5rem;
+    color: var(--primaryColor);
+    background-color: var(--secundaryColor);
+    border-bottom: 1px solid var(--primaryColor);
+}
+
+#email__register::placeholder {
+    color: var(--primaryColor);
+}
+
+#password__register {
+    padding: 1rem 1rem 0.5rem;
+    color: var(--primaryColor);
+    background-color: var(--secundaryColor);
+    border-bottom: 1px solid var(--primaryColor);
+}
+
+#password__register::placeholder {
+    color: var(--primaryColor);
+}
+
+#password__confirm {
+    padding: 1rem 1rem 0.5rem;
+    color: var(--primaryColor);
+    background-color: var(--secundaryColor);
+    border-bottom: 1px solid var(--primaryColor);
+}
+
+#password__confirm::placeholder {
+    color: var(--primaryColor);
+}
+
+#submit__login {
+    width: 100%;
+    display: none;
+    padding: 15px 0;
+    color: var(--brightColor);
+    background-color: var(--primaryColor);
+    font-size: 18px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#submit__login:hover {
+    color: var(--primaryColor);
+    background-color: var(--linkColor);
+}
+
+#submit__register {
+    width: 100%;
+    display: none;
+    padding: 15px 0;
+}
+
+span {
+    position: relative;
+    top: 0px;
+    font-size: 0.8rem;
+    float: right;
 }
