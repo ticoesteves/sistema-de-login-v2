@@ -24,18 +24,54 @@
             </div>
         </nav>
     </header>
-    
+
     <main>
         <section id="description">
-            <div class="content">
+            <div id="content">
                 <h1>Sistema de Login utilizando LocalStorage</h1>
+            </div>
+        </section>
+        <section id="login">
+            <div id="login__content">
+                <form action="panel.html" type="post" id="form__login" autocomplete="off">
+                    <fieldset>
+                        <legend>Login</legend>
+                        <div id="login__content">
+                            <label id="label__email" class="label__email animate__animated">Informe seu e-mail:</label>
+                            <input 
+                                type="email" 
+                                name="email__login" 
+                                id="email__login" 
+                                class="animate__animated" 
+                                placeholder="Informe seu e-mail..." 
+                                onfocus="this.value=''; showLabelMail();" 
+                                onfocusOut="hideLabelMail();" 
+                            />
+                            <label id="label__pass" class="label__pass animate__animated">Informe sua senha:</label>
+                            <input 
+                                type="password" 
+                                name="password__login" 
+                                id="password__login" 
+                                class="animate__animated" 
+                                placeholder="Informe sua senha..." 
+                                onfocus="this.value=''; showLabelPass();" 
+                                onfocusOut="hideLabelPass();" 
+                            />
+                        </div>
+                        <a href="#" id="submit__login" class="animate__animated">Entrar</a>
+                        <span>Não é registrado? <a href="#" onClick="showRegister();">Crie uma conta!</a></span>
+                    </fieldset>
+                </form>
             </div>
         </section>
     </main>
 
     <footer>
         <div id="copy">
-            Copyright do site.
+            &#169; 2023 Desenvolvido por: 
+            <a href="https://ticoesteves.github.io/portfolio/" 
+            target="_blank">Tico Esteves</a><br>
+            Todos os direitos reservados.
         </div>
     </footer>
 

@@ -1,0 +1,116 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --maxWidthContent: 1200px;
+    --primaryColor: blueviolet;
+    --secondaryColor: rgb(200, 178, 221);
+    --linkColor: blue;
+    --brightColor: #fff;
+    --darkColor: #000;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 1.2rem;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    padding: 1rem;
+    color: var(--brightColor);
+    background-color: var(--primaryColor);
+}
+
+nav {
+    width: 100%;
+    max-width: var(--maxWidthContent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+#menu__header ul {
+    display: flex;
+}
+
+#menu__header a {
+    margin: 1rem;
+    padding: 0.7rem 2rem;
+    color: var(--primaryColor);
+    background-color: var(--secondaryColor);
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#menu__header a:hover {
+    color: var(--brightColor);
+    background-color: var(--linkColor);
+}
+
+#description {
+    background-color: var(--secondaryColor);
+    padding: 1rem;
+}
+
+#content {
+    width: 100%;
+    height: 90vh;
+    max-width: var(--maxWidthContent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+#login {
+    width: 40%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2rem;
+    background-color: var(--brightColor);
+}
+
+footer {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    color: var(--brightColor);
+    background-color: var(--primaryColor);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+#copy a {
+    color: var(--secondaryColor);
+}
+
+#copy a:hover {
+    color: var(--brightColor);
+}
