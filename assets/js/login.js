@@ -1,10 +1,16 @@
 const loginForm = document.getElementById("login");
-const buttonLoginHeader = document.getElementById("login__button");
 const buttonLogin = document.getElementById("submit__login");
+const registerMail = localStorage.getItem("user");
+const registerPass = localStorage.getItem("pass");
 function showLogin() {
     loginForm.style.left = "0";
+    document.getElementById("register").style.left = "-200%";
 }
 document.getElementById("login__button").addEventListener("click", showLogin);
+
+function closeLogin() {
+    document.getElementById("login").style.left = "-200%";
+}
 
 function checkLogin(e) {
     var emailLogin = document.getElementById("email__login").value;
@@ -18,9 +24,9 @@ function checkLogin(e) {
         alert("Digite sua senha.");
     }else if(emailLogin === registerMail && passLogin === registerPass){
         alert("Login realizado com sucesso!");
+        submit = true;
     }else{
         alert("Usuário ou senha não encontrados.");
-        submit = true;
     }
     if(submit === false){
         e.preventDefault();
@@ -69,3 +75,9 @@ function hideLabelPass() {
     inputPass.classList.add("animate__fadeInUp");
     inputPass.setAttribute("placeholder", "Informe sua senha...");
 }
+
+window.addEventListener('mouseup',function(backLogin){
+    if(backLogin.target == loginForm && backLogin.target.parentNode != loginForm){
+        closeLogin();
+    }
+}); 

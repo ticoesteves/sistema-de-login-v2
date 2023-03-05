@@ -30,13 +30,17 @@
         <section id="description">
             <div id="content">
                 <h1>Sistema de Login utilizando LocalStorage</h1>
+                &#10026; CRUD simples utilizando apenas JavaScript.<br>
+                &#10026; Usuário e senha armazenados no LocalStorage.<br>
+                &#10026; Painel de controle (usuário, senha e opção de excluir usuário).<br>
             </div>
         </section>
         <section id="login">
-            <span><a href="" id="hide__login" onclick="closeForm();">cancelar</a></span>
             <div id="login__content">
+                <span><a href="" id="hide__login">cancelar</a></span>
                 <form action="panel.html" type="post" id="form__login" autocomplete="off">
                     <fieldset>
+                        <span>Não é registrado? <a href="#" onClick="showRegister();">Crie uma conta!</a></span>
                         <legend>Login</legend>
                             <label id="label__email" class="label__email animate__animated">Informe seu e-mail:</label>
                             <input 
@@ -59,9 +63,50 @@
                                 onfocusOut="hideLabelPass();" 
                             />
                         <button id="submit__login" class="animate__animated">Entrar</button>
-                        <span>Não é registrado? <a href="#" onClick="showRegister();">Crie uma conta!</a></span>
                     </fieldset>
                 </form>
+            </div>
+        </section>
+        <section id="register">
+            <div id="register__content">
+                <span><a href="" id="hide__register">cancelar</a></span>
+                <form id="form__register" autocomplete="off">
+                    <fieldset>
+                        <span>Já é registrado? <a href="#" onClick="showLogin();">Faça Login!</a></span>
+                        <legend>Cadastro</legend>
+                            <label id="label__email__r" class="label__email animate__animated">Informe seu e-mail:</label>
+                            <input 
+                                type="email" 
+                                name="email__register" 
+                                id="email__register" 
+                                placeholder="Informe seu e-mail..." 
+                                required 
+                                onfocus="this.value=''; showLabelMailR();" 
+                                onfocusOut="hideLabelMailR();" 
+                            />
+                            <label id="label__pass__r" class="label__pass animate__animated">Informe sua senha:</label>
+                            <input 
+                                type="password" 
+                                name="password__register" 
+                                id="password__register" 
+                                placeholder="Informe sua senha..." 
+                                required 
+                                onfocus="this.value=''; showLabelPassR();" 
+                                onfocusOut="hideLabelPassR();" 
+                            />
+                            <label id="label__pass__rc" class="label__pass animate__animated">Confirme sua senha:</label>
+                            <input 
+                                type="password" 
+                                name="password__confirm" 
+                                id="password__confirm" 
+                                placeholder="Confirme sua senha..." 
+                                required 
+                                onfocus="this.value=''; showLabelPassRc();" 
+                                onfocusOut="hideLabelPassRc();" 
+                            />
+                            <button id="submit__register" class="animate__animated">Cadastrar</button>
+                        </fieldset>
+                    </form>
             </div>
         </section>
     </main>

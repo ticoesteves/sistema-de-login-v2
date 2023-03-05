@@ -25,6 +25,11 @@ a {
     text-decoration: none;
 }
 
+h1 {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
 body {
     font-family: sans-serif;
     font-size: 1.2rem;
@@ -32,6 +37,7 @@ body {
 
 header {
     width: 100%;
+    height: 90px;
     display: flex;
     position: fixed;
     padding: 1rem;
@@ -68,34 +74,44 @@ nav {
 }
 
 #menu__header a:hover {
-    color: var(--brightColor);
+    color: var(--secondaryColor);
     background-color: var(--linkColor);
 }
 
 #description {
-    background-color: var(--bgColor);
-    padding: 1rem;
-}
-
-#content {
     width: 100%;
     height: 90vh;
     max-width: var(--maxWidthContent);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     margin: 0 auto;
-    padding: 1rem;
-    text-align: center;
+    padding: 8rem 1rem 1rem;
+    background-color: var(--bgColor);
+
 }
 
-#login {
+#content {
+    width: 100%;
+}
+
+.left,
+.right {
+    width: 48%;
+}
+
+.right {
+    text-align: right;
+}
+
+#login,
+#register {
     width: 100%;
     height: 100vh;
     display: flex;
     position: absolute;
     top: 0;
-    left: -100%;
+    left: -200%;
     color: var(--brightColor);
     background-color: var(--brightColor);
     box-shadow: 0px 5px 40px var(--darkColor); 
@@ -104,7 +120,19 @@ nav {
     z-index: 2;
 }
 
-#login__content {
+
+#login a,
+#register a {
+    color: var(--linkColor);
+}
+
+#login a:hover,
+#register a:hover {
+    color: var(--brightColor);
+}
+
+#login__content,
+#register__content {
     width: 40%;
     height: 100vh;
     padding: 8rem 1rem 1rem;
@@ -113,22 +141,13 @@ nav {
     left: 0;
     color: var(--brightColor);
     background-color: var(--secondaryColor);
+    text-align: center;
     box-shadow: 0px 5px 40px var(--darkColor); 
     -webkit-box-shadow: 0px 5px 40px var(--darkColor);
     -moz-box-shadow: 0px 5px 40px var(--darkColor);
     z-index: 3;
 }
-/* 
-#login__content, #content__register {
-    max-width: var(--maxWidthContent);
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    flex-wrap: wrap;
-    border-radius: 20px;
-    z-index: 2;
-}
- */
+
 footer {
     width: 100%;
     height: 5rem;
@@ -157,12 +176,19 @@ footer {
 
 form {
     width: 100%;
-    height: 400px;
 }
 
-form fieldset {
-    height: 380px;
-    padding: 30px 15px;
+#form__register fieldset {
+    height: 400px;
+    padding: 10px 15px;
+    font-size: 25px;
+    border: 3px inset var(--primaryColor);
+    border-radius: 10px;
+}
+
+#form__login fieldset {
+    height: 360px;
+    padding: 10px 15px;
     font-size: 25px;
     border: 3px inset var(--primaryColor);
     border-radius: 10px;
@@ -199,7 +225,7 @@ form input ::placeholder {
 #email__login {
     padding: 1rem 1rem 0.5rem;
     color: var(--primaryColor);
-    background-color: var(--secundaryColor);
+    background-color: var(--secondaryColor);
     border-bottom: 1px solid var(--primaryColor);
 }
 
@@ -210,7 +236,7 @@ form input ::placeholder {
 #password__login {
     padding: 1rem 1rem 0.5rem;
     color: var(--primaryColor);
-    background-color: var(--secundaryColor);
+    background-color: var(--secondaryColor);
     border-bottom: 1px solid var(--primaryColor);
 }
 
@@ -221,7 +247,7 @@ form input ::placeholder {
 #email__register {
     padding: 1rem 1rem 0.5rem;
     color: var(--primaryColor);
-    background-color: var(--secundaryColor);
+    background-color: var(--secondaryColor);
     border-bottom: 1px solid var(--primaryColor);
 }
 
@@ -232,7 +258,7 @@ form input ::placeholder {
 #password__register {
     padding: 1rem 1rem 0.5rem;
     color: var(--primaryColor);
-    background-color: var(--secundaryColor);
+    background-color: var(--secondaryColor);
     border-bottom: 1px solid var(--primaryColor);
 }
 
@@ -243,7 +269,7 @@ form input ::placeholder {
 #password__confirm {
     padding: 1rem 1rem 0.5rem;
     color: var(--primaryColor);
-    background-color: var(--secundaryColor);
+    background-color: var(--secondaryColor);
     border-bottom: 1px solid var(--primaryColor);
 }
 
@@ -272,11 +298,63 @@ form input ::placeholder {
     width: 100%;
     display: none;
     padding: 15px 0;
+    color: var(--brightColor);
+    background-color: var(--primaryColor);
+    font-size: 18px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#submit__register:hover {
+    color: var(--primaryColor);
+    background-color: var(--linkColor);
 }
 
 span {
-    position: relative;
-    top: 0px;
+    width: 100%;
+    display: block;
+    margin: 5px 0 20px;
     font-size: 0.8rem;
-    float: right;
+}
+
+#panel__exit {
+    width: 100%;
+}
+
+.panel__button {
+    padding: 0.8rem 3rem;
+    color: var(--brightColor);
+    background-color: var(--primaryColor);
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.panel__button:hover {
+    color: var(--primaryColor);
+    background-color: var(--linkColor);
+}
+
+#show__user,
+#show__pass {
+    margin: 1rem 0;
+}
+
+#user__delete {
+    padding: 0.8rem 3rem;
+    color: var(--brightColor);
+    background-color: var(--primaryColor);
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#user__delete:hover {
+    color: var(--primaryColor);
+    background-color: var(--linkColor);
 }
