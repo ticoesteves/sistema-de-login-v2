@@ -4,11 +4,13 @@ const buttonRegister = document.getElementById("submit__register");
 function showRegister() {
     registerForm.style.left = "0";
     document.getElementById("login").style.left = "-200%";
+    registerForm.classList.add("animate__bounceInLeft");
 }
 document.getElementById("regiter__button").addEventListener("click", showRegister);
 
 function closeRegister() {
     document.getElementById("register").style.left = "-200%";
+    registerForm.classList.remove("animate__bounceInLeft");
 }
 
 // Verificação de preenchimento dos dados

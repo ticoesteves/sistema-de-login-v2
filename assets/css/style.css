@@ -15,6 +15,7 @@
     --brightColor: #fff;
     --darkColor: #000;
     --linkColor: #50FA7B;
+    --transparentColor: rgb(0 0 0 / .3);
 }
 
 ul {
@@ -46,7 +47,7 @@ header {
     box-shadow: 0px 5px 40px var(--darkColor); 
     -webkit-box-shadow: 0px 5px 40px var(--darkColor);
     -moz-box-shadow: 0px 5px 40px var(--darkColor);
-    z-index: 4;
+    z-index: 2;
 }
 
 nav {
@@ -113,11 +114,8 @@ nav {
     top: 0;
     left: -200%;
     color: var(--brightColor);
-    background-color: var(--brightColor);
-    box-shadow: 0px 5px 40px var(--darkColor); 
-    -webkit-box-shadow: 0px 5px 40px var(--darkColor);
-    -moz-box-shadow: 0px 5px 40px var(--darkColor);
-    z-index: 2;
+    background-color: var(--transparentColor);
+    z-index: 3;
 }
 
 
@@ -135,7 +133,7 @@ nav {
 #register__content {
     width: 40%;
     height: 100vh;
-    padding: 8rem 1rem 1rem;
+    padding: 1rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -311,10 +309,12 @@ form input ::placeholder {
     background-color: var(--linkColor);
 }
 
-span {
+.header__form {
     width: 100%;
-    display: block;
+    display: flex;
+    justify-content: space-between;
     margin: 5px 0 20px;
+    padding: 1rem 0;
     font-size: 0.8rem;
 }
 
@@ -357,4 +357,67 @@ span {
 #user__delete:hover {
     color: var(--primaryColor);
     background-color: var(--linkColor);
+}
+
+@media(max-width: 840px){
+
+    #login__content,
+    #register__content {
+        width: 70%;
+    }
+
+}
+
+@media(max-width: 720px){
+
+    #login__content,
+    #register__content {
+        width: 80%;
+    }
+
+}
+
+@media(max-width: 620px){
+
+    #login__content,
+    #register__content {
+        width: 90%;
+    }
+
+}
+
+@media(max-width: 520px){
+
+    header {
+        height: 280px;
+    }
+
+    nav {
+        display: block;
+    }
+
+    #logo {
+        width: 100%;
+        text-align: center;
+    }
+
+    #menu__header ul {
+        display: block;
+        text-align: center;
+    }
+
+    #menu__header li {
+        margin: 3rem 0;
+    }
+
+    #description {
+        padding-top: 20rem;
+        height: 100vh;
+    }
+
+    #login__content,
+    #register__content {
+        width: 100%;
+    }
+
 }

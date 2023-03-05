@@ -17,7 +17,7 @@ function exitPanel(){
 document.getElementById("exit__button").addEventListener("click", exitPanel);
 
 function removeUser(){
-    if(confirm("Esta ação não pode ser desfeita.")){
+    if(confirm("Tem certeza que deseja excluir sua conta?\nEsta ação não pode ser desfeita.")){
         window.localStorage.clear();
         alert("Usuário excluído com sucesso!");
         window.location.href = "/index.html";

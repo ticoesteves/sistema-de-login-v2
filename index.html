@@ -19,8 +19,8 @@
             </div>
             <div id="menu__header">
                 <ul>
-                    <li id="login__button"><a href="#login">Login</a></li>
-                    <li id="regiter__button"><a href="#register">Cadastro</a></li>
+                    <li id="login__button" onclick="closeRegister();"><a href="#login">Login</a></li>
+                    <li id="regiter__button" onclick="closeLogin();"><a href="#register">Cadastro</a></li>
                 </ul>
             </div>
         </nav>
@@ -32,15 +32,17 @@
                 <h1>Sistema de Login utilizando LocalStorage</h1>
                 &#10026; CRUD simples utilizando apenas JavaScript.<br>
                 &#10026; Usuário e senha armazenados no LocalStorage.<br>
-                &#10026; Painel de controle (usuário, senha e opção de excluir usuário).<br>
+                &#10026; Painel de controle (usuário, senha e opção de excluir a conta).<br>
             </div>
         </section>
-        <section id="login">
+        <section id="login" class="animate__animated">
             <div id="login__content">
-                <span><a href="" id="hide__login">cancelar</a></span>
+                <div class="header__form">
+                    <span><a href="" id="hide__login">cancelar</a></span>
+                    <span>Não é registrado? <a href="#" onClick="showRegister(); closeLogin();">Crie uma conta!</a></span>
+                </div>
                 <form action="panel.html" type="post" id="form__login" autocomplete="off">
                     <fieldset>
-                        <span>Não é registrado? <a href="#" onClick="showRegister();">Crie uma conta!</a></span>
                         <legend>Login</legend>
                             <label id="label__email" class="label__email animate__animated">Informe seu e-mail:</label>
                             <input 
@@ -67,12 +69,14 @@
                 </form>
             </div>
         </section>
-        <section id="register">
+        <section id="register" class="animate__animated">
             <div id="register__content">
-                <span><a href="" id="hide__register">cancelar</a></span>
+                <div class="header__form">
+                    <span><a href="" id="hide__register">cancelar</a></span>
+                    <span>Já é registrado? <a href="#" onClick="showLogin(); closeRegister();">Faça Login!</a></span>
+                </div>
                 <form id="form__register" autocomplete="off">
                     <fieldset>
-                        <span>Já é registrado? <a href="#" onClick="showLogin();">Faça Login!</a></span>
                         <legend>Cadastro</legend>
                             <label id="label__email__r" class="label__email animate__animated">Informe seu e-mail:</label>
                             <input 

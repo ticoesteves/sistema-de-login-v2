@@ -5,11 +5,13 @@ const registerPass = localStorage.getItem("pass");
 function showLogin() {
     loginForm.style.left = "0";
     document.getElementById("register").style.left = "-200%";
+    loginForm.classList.add("animate__bounceInLeft");
 }
 document.getElementById("login__button").addEventListener("click", showLogin);
 
 function closeLogin() {
     document.getElementById("login").style.left = "-200%";
+    loginForm.classList.remove("animate__bounceInLeft");
 }
 
 function checkLogin(e) {
@@ -33,6 +35,7 @@ function checkLogin(e) {
     }
 }
 document.getElementById("submit__login").addEventListener("click", checkLogin);
+
 // Animações form login
 function showLabelMail() {
     var labelMail = document.getElementById("label__email");
@@ -76,6 +79,7 @@ function hideLabelPass() {
     inputPass.setAttribute("placeholder", "Informe sua senha...");
 }
 
+// Fecha formulário ao clicar no background
 window.addEventListener('mouseup',function(backLogin){
     if(backLogin.target == loginForm && backLogin.target.parentNode != loginForm){
         closeLogin();
