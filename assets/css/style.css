@@ -32,6 +32,7 @@ h1 {
 }
 
 body {
+    background-color: var(--bgColor);
     font-family: sans-serif;
     font-size: 1.2rem;
 }
@@ -79,19 +80,6 @@ nav {
     background-color: var(--linkColor);
 }
 
-#description {
-    width: 100%;
-    height: 90vh;
-    max-width: var(--maxWidthContent);
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    padding: 8rem 1rem 1rem;
-    background-color: var(--bgColor);
-
-}
-
 #content {
     width: 100%;
 }
@@ -118,7 +106,6 @@ nav {
     z-index: 3;
 }
 
-
 #login a,
 #register a {
     color: var(--linkColor);
@@ -129,9 +116,20 @@ nav {
     color: var(--brightColor);
 }
 
+#description {
+    width: 100%;
+    max-width: var(--maxWidthContent);
+    height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 8rem 1rem 1rem;
+}
+
 #login__content,
 #register__content {
-    width: 40%;
+    width: 30%;
     height: 100vh;
     padding: 1rem;
     position: absolute;
@@ -357,6 +355,24 @@ form input ::placeholder {
 #user__delete:hover {
     color: var(--primaryColor);
     background-color: var(--linkColor);
+}
+
+@media(max-width: 1240px){
+
+    #login__content,
+    #register__content {
+        width: 40%;
+    }
+
+}
+
+@media(max-width: 940px){
+
+    #login__content,
+    #register__content {
+        width: 50%;
+    }
+
 }
 
 @media(max-width: 840px){
