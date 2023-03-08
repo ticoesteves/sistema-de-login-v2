@@ -103,7 +103,7 @@ nav {
     left: -200%;
     color: var(--brightColor);
     background-color: var(--transparentColor);
-    z-index: 3;
+    z-index: 4;
 }
 
 #login a,
@@ -159,7 +159,7 @@ footer {
     box-shadow: 0px 5px 40px var(--darkColor); 
     -webkit-box-shadow: 0px 5px 40px var(--darkColor);
     -moz-box-shadow: 0px 5px 40px var(--darkColor);
-    z-index: 4;
+    z-index: 3;
 }
 
 #copy a {
