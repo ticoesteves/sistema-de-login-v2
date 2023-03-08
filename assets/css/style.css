@@ -406,6 +406,7 @@ form input ::placeholder {
 
     header {
         height: 280px;
+		text-align: center;
     }
 
     nav {
@@ -414,6 +415,7 @@ form input ::placeholder {
 
     #logo {
         width: 100%;
+		margin-bottom: 2rem;
         text-align: center;
     }
 
@@ -427,9 +429,19 @@ form input ::placeholder {
     }
 
     #description {
+		height: 100vh;
         padding-top: 20rem;
-        height: 100vh;
     }
+	
+	#description h1 {
+		text-align: center;
+	}
+	
+	#description .left,
+	#description .right {
+		width: 100%;
+		text-align: center;
+	}
 
     #login__content,
     #register__content {
